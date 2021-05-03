@@ -31,6 +31,8 @@ public class DentistAppController extends WebMvcConfigurerAdapter {
         registry.addViewController("/registrations").setViewName("registrations");
     }
 
+
+
     @GetMapping("/")
     //Form page
     public String showRegisterForm(DentistVisitDTO dentistVisitDTO) {
