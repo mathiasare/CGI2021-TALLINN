@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+
+<!--Template for results page-->
+<html lang="en">
+  <head>
+    <link rel="stylesheet" th:href="@{css/registrations.css}" href="../static/css/registrations.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous" />
+    <title>Document</title>
+  </head>
+  <!--Stylesheet-->
+  <link rel="stylesheet" th:href="@{css/form.css}" href="../static/css/form.css" />
+  <body>
+      <!--Navigation bar-->
+    <nav class="navbar navbar-light bg-light">
+      <div class="navbar">
+        <a class="nav-link" href="#" th:href="@{/}">Register</a>
+        <a class="nav-link" href="#" th:href="@{/registrations}">Current registrations</a>
+      </div>
+    </nav>
+    <!--Body where message of failure or success is displayed-->
+    <div class="content">
+        <h1 th:text="${message}">registration.ok</h1>
+    </div>
+    
+  </body>
+</html>

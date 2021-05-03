@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+
+<!-- Template for form page -->
+<html>
+  <head>
+        <!-- Stylesheets -->
+    <link rel="stylesheet" th:href="@{css/form.css}" href="../static/css/form.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous" />
+    <title>Document</title>
+  </head>
+  <body>
+
+    <!-- Navigation bar -->
+    <nav class="navbar navbar-light bg-light">
+      <div class="navbar">
+        <a class="nav-link" href="#" th:href="@{/}">Register</a>
+        <a class="nav-link" href="#" th:href="@{/registrations}">Current registrations</a>
+      </div>
+    </nav>
+    
+    <!--Content-->
+    <div class="content">
+
+        <!--Form table binds data to dentistVisitDTO object and sends post request-->
+      <form action="#" th:action="@{/}" th:object="${dentistVisitDTO}" method="post">
+
+        <table class="regs-form">
+          <tr>
+            <td><p th:text="#{dentist.name}">dentist.name</p></td>
+            <td>
+              <select th:field="*{dentistName}">
+                <option value="Dr.A">Dr.A</option>
+                <option value="Dr.B">Dr.B</option>
+                <option value="Dr.C">Dr.C</option>
+                <option value="Dr.D">Dr.D</option>
+              </select>
+            </td>
+            <td th:if="${#fields.hasErrors('dentistName')}" th:errors="*{dentistName}">name.error</td>
+          </tr>
+          <tr>
+            <td><p th:text="#{visit.date}">visit.date</p></td>
+            <td>
+              <select th:field="*{visitTime}">
+                <option value="12.03.2021">12.03.2021</option>
+                <option value="13.03.2021">13.03.2021</option>
+                <option value="17.03.2021">17.03.2021</option>
+                <option value="18.03.2021">18.03.2021</option>
+              </select>
+            </td>
+            <td th:if="${#fields.hasErrors('visitTime')}" th:errors="*{visitTime}">date.error</td>
+          </tr>
+          <tr>
+            <td><p th:text="#{visit.time}">visit.time</p></td>
+            <td>
+              <select th:field="*{visitHours}">
+                <option value="11:45">11:45</option>
+                <option value="12:30">12:30</option>
+                <option value="17:25">17:25</option>
+                <option value="18:00">18:00</option>
+              </select>
+            </td>
+            <!--<td th:if="${#fields.hasErrors('visitTime')}" th:errors="*{visitHours}">date.error</td>-->
+          </tr>
+          <tr>
+            <td colspan="3" class="button-cell">
+              <div>
+                <button class="btn btn-success" type="submit" th:text="#{register.visit}">Sisesta</button>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </form>
+    </div>
+  </body>
+</html>

@@ -1,5 +1,6 @@
-# CGI2021-TALLINN
-
+# Dentist Registration
+## CGI2021 TALLINN
+## Test assignment for Summer Internship 2021
 ## By mathiasare
 
-### NOTE: This repository was automatically generated. Please write to are.mathias@gmail.com for further questions.
+## Project setup
